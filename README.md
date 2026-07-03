@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6e40c9,100:e040fb&height=200&section=header&text=DSA%20MASTERY&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Data%20Structures%20%26%20Algorithms%20by%20Aditya%20Singh&descAlignY=60&descSize=20" width="100%"/>
+<img src="./banner.svg" width="100%" alt="DSA Mastery"/>
 
 <br/>
 
