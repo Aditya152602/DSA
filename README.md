@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=DSA%20MASTERY%20⚔️&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Data%20Structures%20%26%20Algorithms%20|%20Aditya%20Singh&descAlignY=58&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6e40c9,100:e040fb&height=200&section=header&text=DSA%20MASTERY&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Data%20Structures%20%26%20Algorithms%20by%20Aditya%20Singh&descAlignY=60&descSize=20" width="100%"/>
 
 <br/>
 
 <!-- Animated Typing Banner -->
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=3000&pause=1000&color=6E40C9&center=true&vCenter=true&multiline=false&width=700&lines=🚀+Cracking+DSA+one+problem+at+a+time;🧠+Think+→+Optimise+→+Conquer;⚡+From+Brute+Force+to+O(log+n);🏆+FAANG-Ready+Preparation+Zone;💡+Arrays+%7C+Trees+%7C+Graphs+%7C+DP+%26+Beyond" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=3000&pause=1000&color=6E40C9&center=true&vCenter=true&width=700&lines=Cracking+DSA+one+problem+at+a+time...;Think+%E2%80%94+Optimise+%E2%80%94+Conquer;From+Brute+Force+to+O(log+n);FAANG-Ready+Preparation+Zone;Arrays+%7C+Trees+%7C+Graphs+%7C+DP" alt="Typing SVG" />
 
 <br/><br/>
 
