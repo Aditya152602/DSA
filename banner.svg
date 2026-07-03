@@ -1,0 +1,74 @@
+<svg width="1200" height="200" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="200" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#05050e"/>
+    <stop offset="100%" stop-color="#090916"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="600" cy="100" r="380" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#3b1f8c" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#3b1f8c" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="titleGrad" x1="330" y1="0" x2="870" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#a78bfa"/>
+    <stop offset="42%" stop-color="#f0eeff"/>
+    <stop offset="100%" stop-color="#60a5fa"/>
+  </linearGradient>
+  <linearGradient id="accentLine" x1="320" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+    <stop offset="18%" stop-color="#7c3aed"/>
+    <stop offset="82%" stop-color="#3b82f6"/>
+    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="topEdge" x1="180" y1="0" x2="1020" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+    <stop offset="28%" stop-color="#7c3aed" stop-opacity="0.9"/>
+    <stop offset="72%" stop-color="#3b82f6" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="dotGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="0" cy="0" r="0.85" fill="#ffffff" opacity="0.06"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="200" fill="url(#bg)"/>
+<rect width="1200" height="200" fill="url(#dotGrid)"/>
+<ellipse cx="600" cy="100" rx="500" ry="140" fill="url(#glow)"/>
+
+<rect x="180" y="0" width="840" height="0.75" fill="url(#topEdge)"/>
+
+<path d="M22,22 L22,54 M22,22 L54,22" stroke="#7c3aed" stroke-width="1.1" fill="none" opacity="0.75" stroke-linecap="round"/>
+<path d="M1178,22 L1178,54 M1178,22 L1146,22" stroke="#3b82f6" stroke-width="1.1" fill="none" opacity="0.75" stroke-linecap="round"/>
+<path d="M22,178 L22,146 M22,178 L54,178" stroke="#7c3aed" stroke-width="1.1" fill="none" opacity="0.75" stroke-linecap="round"/>
+<path d="M1178,178 L1178,146 M1178,178 L1146,178" stroke="#3b82f6" stroke-width="1.1" fill="none" opacity="0.75" stroke-linecap="round"/>
+
+<circle cx="150" cy="72" r="2.2" fill="#7c3aed" opacity="0.5"/>
+<circle cx="170" cy="100" r="1.6" fill="#7c3aed" opacity="0.35"/>
+<circle cx="152" cy="128" r="2.2" fill="#7c3aed" opacity="0.5"/>
+<line x1="150" y1="72" x2="170" y2="100" stroke="#7c3aed" stroke-width="0.6" opacity="0.25"/>
+<line x1="170" y1="100" x2="152" y2="128" stroke="#7c3aed" stroke-width="0.6" opacity="0.25"/>
+
+<circle cx="1050" cy="72" r="2.2" fill="#3b82f6" opacity="0.5"/>
+<circle cx="1030" cy="100" r="1.6" fill="#3b82f6" opacity="0.35"/>
+<circle cx="1048" cy="128" r="2.2" fill="#3b82f6" opacity="0.5"/>
+<line x1="1050" y1="72" x2="1030" y2="100" stroke="#3b82f6" stroke-width="0.6" opacity="0.25"/>
+<line x1="1030" y1="100" x2="1048" y2="128" stroke="#3b82f6" stroke-width="0.6" opacity="0.25"/>
+
+<circle cx="340" cy="84" r="2.5" fill="#7c3aed" opacity="0.65"/>
+<circle cx="860" cy="84" r="2.5" fill="#3b82f6" opacity="0.65"/>
+
+<text x="600" y="97"
+  text-anchor="middle"
+  font-family="'Segoe UI','SF Pro Display',-apple-system,BlinkMacSystemFont,Arial,sans-serif"
+  font-size="54" font-weight="700" letter-spacing="12"
+  fill="url(#titleGrad)">DSA MASTERY</text>
+
+<rect x="320" y="111" width="560" height="0.85" fill="url(#accentLine)" rx="0.5"/>
+
+<text x="600" y="145"
+  text-anchor="middle"
+  font-family="'Segoe UI','SF Pro Display',-apple-system,sans-serif"
+  font-size="12" font-weight="400" letter-spacing="3.5"
+  fill="#5a5a8a">DATA STRUCTURES  ·  ALGORITHMS  ·  ADITYA DWIVEDI  ·  CSE AI  ·  AKTU LUCKNOW</text>
+
+<rect x="0" y="199" width="1200" height="1" fill="#111128"/>
+</svg>
