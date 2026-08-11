@@ -1,0 +1,30 @@
+public class Main {
+
+    public static int hammingWeight(int n) {
+
+        int count = 0;
+
+        // Check all 32 bits
+        for (int i = 0; i < 32; i++) {
+
+            // Check the last bit
+            if ((n & 1) == 1) {
+                count++;
+            }
+
+            // Move the next bit to the last position
+            n = n >>> 1;
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+
+        int n = 23;  // Binary: 10111
+
+        int answer = hammingWeight(n);
+
+        System.out.println(answer);
+    }
+}
