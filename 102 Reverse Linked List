@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    // Reverse the linked list
+    public static ListNode reverseList(ListNode head) {
+
+        ListNode previous = null;
+        ListNode current = head;
+
+        while (current != null) {
+
+            // Save the next node
+            ListNode nextNode = current.next;
+
+            // Reverse the link
+            current.next = previous;
+
+            // Move previous to current node
+            previous = current;
+
+            // Move current to the next node
+            current = nextNode;
+        }
+
+        return previous;
+    }
+
+    // Print the linked list
+    public static void printList(ListNode head) {
+
+        ListNode current = head;
+
+        while (current != null) {
+            System.out.print(current.val + " -> ");
+            current = current.next;
+        }
+
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Ask user for number of nodes
+        System.out.print("Enter number of nodes: ");
+        int n = sc.nextInt();
+
+        ListNode head = null;
+        ListNode tail = null;
+
+        // Take values from user
+        System.out.println("Enter " + n + " values:");
+
+        for (int i = 0; i < n; i++) {
+
+            int value = sc.nextInt();
+
+            // Create a new node
+            ListNode newNode = new ListNode(value);
+
+            // If list is empty
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } 
+            else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        // Print original list
+        System.out.print("Original List: ");
+        printList(head);
+
+        // Reverse the list
+        head = reverseList(head);
+
+        // Print reversed list
+        System.out.print("Reversed List: ");
+        printList(head);
+
+        sc.close();
+    }
+}
