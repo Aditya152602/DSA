@@ -1,0 +1,126 @@
+import java.util.Scanner;
+
+// Create a node
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    // Method to merge two sorted linked lists
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+        // Create a dummy node
+        ListNode dummy = new ListNode(0);
+
+        // Current will build the new list
+        ListNode current = dummy;
+
+        // Compare both lists
+        while (list1 != null && list2 != null) {
+
+            if (list1.val <= list2.val) {
+                current.next = list1;
+                list1 = list1.next;
+            } else {
+                current.next = list2;
+                list2 = list2.next;
+            }
+
+            current = current.next;
+        }
+
+        // Attach remaining nodes
+        if (list1 != null) {
+            current.next = list1;
+        } else {
+            current.next = list2;
+        }
+
+        // Return the first real node
+        return dummy.next;
+    }
+
+    // Create a linked list from user input
+    public static ListNode createList(Scanner sc, int n) {
+
+        ListNode head = null;
+        ListNode tail = null;
+
+        for (int i = 0; i < n; i++) {
+
+            int value = sc.nextInt();
+
+            ListNode newNode = new ListNode(value);
+
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        return head;
+    }
+
+    // Print the linked list
+    public static void printList(ListNode head) {
+
+        ListNode current = head;
+
+        while (current != null) {
+            System.out.print(current.val);
+
+            if (current.next != null) {
+                System.out.print(" -> ");
+            }
+
+            current = current.next;
+        }
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Input for first list
+        System.out.print("Enter number of nodes in List 1: ");
+        int n1 = sc.nextInt();
+
+        System.out.println("Enter sorted values of List 1:");
+        ListNode list1 = createList(sc, n1);
+
+        // Input for second list
+        System.out.print("Enter number of nodes in List 2: ");
+        int n2 = sc.nextInt();
+
+        System.out.println("Enter sorted values of List 2:");
+        ListNode list2 = createList(sc, n2);
+
+        // Display original lists
+        System.out.print("List 1: ");
+        printList(list1);
+
+        System.out.print("List 2: ");
+        printList(list2);
+
+        // Merge both lists
+        ListNode result = mergeTwoLists(list1, list2);
+
+        // Display merged list
+        System.out.print("Merged List: ");
+        printList(result);
+
+        sc.close();
+    }
+}
