@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class LongestSubstringWithoutRepeatingCharacters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the String: ");
+        String s = sc.nextLine();
+        
+        int maxLength = 0;
+        int start = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        
+        for (int end = 0; end < s.length(); end++) {
+            char c = s.charAt(end);
+            
+            // If we've seen the character before, move the 'start' pointer 
+            // past the previous occurrence to avoid duplicates in our window.
+            if (map.containsKey(c)) {
+                start = Math.max(map.get(c) + 1, start);
+            }
+            
+            // Update the map with the character's most recent index
+            map.put(c, end);
+            
+            // Calculate the maximum length found so far
+            maxLength = Math.max(maxLength, end - start + 1);
+        }
+        
+        System.out.println("The length of the longest substring is: " + maxLength);
+        sc.close();
+    }
+}
