@@ -1,0 +1,46 @@
+public class MinimumWindowSubstring {
+
+    // Returns the minimum window in s which contains all characters of t
+    public static String minWindow(String s, String t) {
+        if (s == null || t == null || s.length() < t.length()) return "";
+
+        int[] need = new int[128]; // ASCII frequencies needed
+        for (char c : t.toCharArray()) need[c]++;
+
+        int required = t.length(); // total chars still required
+        int left = 0, minLen = Integer.MAX_VALUE, minStart = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char rc = s.charAt(right);
+            if (need[rc] > 0) required--;
+            need[rc]--;
+
+            // When all required characters are included, try to shrink window
+            while (required == 0) {
+                if (right - left + 1 < minLen) {
+                    minLen = right - left + 1;
+                    minStart = left;
+                }
+                char lc = s.charAt(left);
+                need[lc]++;
+                if (need[lc] > 0) required++; // this char is now missing
+                left++;
+            }
+        }
+
+        return (minLen == Integer.MAX_VALUE) ? "" : s.substring(minStart, minStart + minLen);
+    }
+
+    public static void main(String[] args) {
+        // Example: ADOBECODEBANC, ABC -> BANC
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        if (args.length >= 2) { // allow passing custom args
+            s = args[0];
+            t = args[1];
+        }
+        System.out.println("s = " + s);
+        System.out.println("t = " + t);
+        System.out.println("Minimum window substring: " + minWindow(s, t));
+    }
+}
