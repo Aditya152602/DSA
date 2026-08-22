@@ -1,0 +1,68 @@
+import java.util.*;
+
+class WordDictionary {
+
+    class Node {
+        Node[] child = new Node[26];
+        boolean end;
+    }
+
+    Node root = new Node();
+
+    public void addWord(String word) {
+        Node cur = root;
+
+        for (char c : word.toCharArray()) {
+            int i = c - 'a';
+
+            if (cur.child[i] == null)
+                cur.child[i] = new Node();
+
+            cur = cur.child[i];
+        }
+
+        cur.end = true;
+    }
+
+    public boolean search(String word) {
+        return dfs(root, word, 0);
+    }
+
+    boolean dfs(Node node, String word, int pos) {
+        if (pos == word.length())
+            return node.end;
+
+        char c = word.charAt(pos);
+
+        if (c == '.') {
+            for (Node next : node.child) {
+                if (next != null && dfs(next, word, pos + 1))
+                    return true;
+            }
+            return false;
+        }
+
+        int i = c - 'a';
+
+        if (node.child[i] == null)
+            return false;
+
+        return dfs(node.child[i], word, pos + 1);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        WordDictionary wd = new WordDictionary();
+
+        wd.addWord("day");
+        wd.addWord("bay");
+        wd.addWord("may");
+
+        System.out.println(wd.search("say"));
+        System.out.println(wd.search("day"));
+        System.out.println(wd.search(".ay"));
+        System.out.println(wd.search("b.."));
+    }
+}
