@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Main {
+
+    public static String encode(List<String> strs) {
+        StringBuilder encoded = new StringBuilder();
+
+        for (String s : strs) {
+            encoded.append(s.length()).append("#").append(s);
+        }
+
+        return encoded.toString();
+    }
+
+    public static List<String> decode(String encoded) {
+        List<String> result = new ArrayList<>();
+        int i = 0;
+
+        while (i < encoded.length()) {
+            int j = i;
+
+            // Find #
+            while (encoded.charAt(j) != '#') {
+                j++;
+            }
+
+            // Get string length
+            int length = Integer.parseInt(encoded.substring(i, j));
+
+            // Extract original string
+            result.add(encoded.substring(j + 1, j + 1 + length));
+
+            // Move to next encoded string
+            i = j + 1 + length;
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<String> strs = Arrays.asList("hello", "world", "#test", "");
+
+        String encoded = encode(strs);
+        System.out.println("Encoded: " + encoded);
+
+        List<String> decoded = decode(encoded);
+        System.out.println("Decoded: " + decoded);
+    }
+}
