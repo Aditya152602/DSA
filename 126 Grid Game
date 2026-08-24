@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Main {
+
+    public static long gridGame(int[][] grid) {
+        int n = grid[0].length;
+
+        long topSum = 0;
+        long bottomSum = 0;
+
+        
+        for (int i = 0; i < n; i++) {
+            topSum += grid[0][i];
+            bottomSum += grid[1][i];
+        }
+
+        long answer = Long.MAX_VALUE;
+        long bottomLeft = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            
+            topSum -= grid[0][i];
+
+            
+            long secondRobotPoints = Math.max(topSum, bottomLeft);
+
+            
+            answer = Math.min(answer, secondRobotPoints);
+
+          
+            bottomLeft += grid[1][i];
+        }
+
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[][] grid = {
+            {2, 5, 4},
+            {1, 5, 1}
+        };
+
+        System.out.println(gridGame(grid)); // 4
+    }
+}
