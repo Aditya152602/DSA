@@ -1,0 +1,20 @@
+public class SearchTargetElement  {
+    public static void main(String[] args) {
+        int[] arr = {1, 20, 300, 4000, 50000, 600000, 7000000, 80000000};
+        int num = 4000;
+        boolean isInArray = false;
+        
+        for (int a : arr) {
+            if (a == num) {
+                isInArray = true;
+                break;
+            }
+        }
+        
+        if (isInArray) {
+            System.out.println("Value is present");
+        } else {
+            System.out.println("Value is not present");
+        }
+    }
+}
