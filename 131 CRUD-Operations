@@ -1,0 +1,31 @@
+import java.util.*;
+public class DeletingElement {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 4, 6, 4, 6, 3, 2, 1, 9, 10};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Which Element you want to delete? ");
+        int n = sc.nextInt();
+
+        
+        int count = 0;
+        for (int a : arr) {
+            if (a == n) {
+                count++;
+            }
+        }
+
+        
+        int[] newArr = new int[arr.length - count];
+        int index = 0;
+
+        
+        for (int a : arr) {
+            if (a != n) {
+                newArr[index++] = a;
+            }
+        }
+
+        System.out.println("Original array: " + Arrays.toString(arr));
+        System.out.println("Array after deletion: " + Arrays.toString(newArr));
+    }
+}
