@@ -1,0 +1,42 @@
+import java.util.*;
+public class KthLargest {
+    private static int kthLargest(int[] nums, int k) {
+        int n = nums.length;
+        return quickSelect(nums, 0, n - 1, n - k); // convert to k-th smallest index
+    }
+
+    private static int quickSelect(int[] a, int left, int right, int kIndex) {
+        Random rnd = new Random();
+        while (left <= right) {
+            int pivotIdx = left + rnd.nextInt(right - left + 1);
+            int pivot = a[pivotIdx];
+            swap(a, pivotIdx, right);
+            int store = left;
+            for (int i = left; i < right; i++) {
+                if (a[i] < pivot) swap(a, store++, i);
+            }
+            swap(a, store, right);
+            if (store == kIndex) return a[store];
+            if (store < kIndex) left = store + 1; else right = store - 1;
+        }
+        return -1; // should not reach here for valid input
+    }
+
+    private static void swap(int[] a, int i, int j) {
+        int t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) { System.out.println(0); return; }
+        int n = sc.nextInt();
+        if (n <= 0) { System.out.println(0); return; }
+        int[] arr = new int[n];
+        for (int i = 0; i < n && sc.hasNextInt(); i++) arr[i] = sc.nextInt();
+        if (!sc.hasNextInt()) { System.out.println(0); return; }
+        int k = sc.nextInt();
+        if (k < 1 || k > n) { System.out.println(0); return; }
+        System.out.println(kthLargest(arr, k));
+    }
+}
+
