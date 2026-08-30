@@ -1,0 +1,53 @@
+// Declare a public class named MajorityElement
+public class MajorityElement {
+
+    // Define the main method, which serves as the entry point for the program
+    public static void main(String[] args) {
+        
+        // Initialize an integer array containing a sequence of numbers where '2' is the majority
+        int[] nums = {2, 2, 1, 2, 1, 2, 2};
+        
+        // Call the majorityElement method with the array and store the result
+        int result = majorityElement(nums);
+        
+        // Print the final calculated majority element to the console
+        System.out.println("Majority element: " + result);
+    }
+
+    // Define a static method that takes an integer array and returns the majority integer
+    public static int majorityElement(int[] nums) {
+        
+        // Initialize a variable to hold the current potential majority number
+        int candidate = 0;
+        
+        // Initialize a counter to track the net "votes" for the current candidate
+        int count = 0;
+
+        // Start a for-each loop to look at every single number in the array one by one
+        for (int num : nums) {
+            
+            // Check if the current vote count has dropped to zero
+            if (count == 0) {
+                
+                // If the count is zero, elect the current number as the new candidate
+                candidate = num;
+            }
+            
+            // Check if the current number being evaluated matches our elected candidate
+            if (num == candidate) {
+                
+                // If it is a match, increase the vote count for the candidate by 1
+                count++;
+            } 
+            // If the current number is different from our elected candidate
+            else {
+                
+                // Decrease the vote count for the candidate by 1 (an opposing vote)
+                count--;
+            }
+        }
+
+        // Return the candidate that survived the loop, which is guaranteed to be the majority
+        return candidate;
+    }
+}
