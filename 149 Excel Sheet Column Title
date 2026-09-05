@@ -1,0 +1,31 @@
+public class Main {
+
+    public static String convertToTitle(int columnNumber) {
+        StringBuilder result = new StringBuilder();
+
+        while (columnNumber > 0) {
+            columnNumber--;
+
+            char letter = (char) ('A' + (columnNumber % 26));
+            result.append(letter);
+
+            columnNumber /= 26;
+        }
+
+        return result.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+
+        // Test cases
+        System.out.println("1   -> " + convertToTitle(1));
+        System.out.println("26  -> " + convertToTitle(26));
+        System.out.println("27  -> " + convertToTitle(27));
+        System.out.println("28  -> " + convertToTitle(28));
+        System.out.println("52  -> " + convertToTitle(52));
+        System.out.println("701 -> " + convertToTitle(701));
+        System.out.println("702 -> " + convertToTitle(702));
+        System.out.println("703 -> " + convertToTitle(703));
+    }
+}
+```
